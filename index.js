@@ -84,8 +84,8 @@ calcWage('손태웅', 161, 13070);
 calcWage('허우선', 222, 10980);
 
 // null과 undefined 익히기
-console.log(null == undefined) // true
-console.log(null === undefined) // false
+console.log(null == undefined); // true
+console.log(null === undefined); // false
 
 let x;
 console.log(x); // underfined 출력
@@ -95,3 +95,38 @@ console.log(y); // underfined 출력
 console.log(x); // null 출력
 x = y;
 console.log(x); // underfined 출력
+
+// 옵셔널 파라미터 (Optional Parameters)
+function introduce(name, age, nationality = '한국') {
+  console.log(`제 이름은 ${name}입니다.`);
+  console.log(`나이는 ${age}살 이고,`);
+  console.log(`국적은 ${nationality}입니다.`);
+}
+
+introduce('코드잇', '미국', 4); // 값을 모두 전달한 경우
+console.log('');
+introduce('코드잇', 4); // 파라미터 값을 생략한 경우
+
+//  Scope: 범위, 영역
+let x = 3; // 글로벌 변수, 전역 변수 (Global Variable)
+
+function myFunction() { // 블록문 (Block Statement)
+  let x = 5; // 로컬 변수, 지역 변수 (Local Variable)
+  console.log(x);
+}
+
+myFunction();
+console.log(x);
+
+// 상수 (constant)
+const PI = 3.14; // 원주율
+let radius = 0; // 반지름
+
+// if문 (if statement)
+let temperature = 1;
+
+if (temperature <= 0) {
+  console.log('물이 업니다.');
+} else {
+  console.log('물이 얼지 않습니다.');
+}
