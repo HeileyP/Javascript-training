@@ -130,3 +130,201 @@ if (temperature <= 0) {
 } else {
   console.log('물이 얼지 않습니다.');
 }
+
+// else if문 
+function printGrade(midtermScore, finalScore){
+	let totalScore = midtermScore + finalScore;
+	
+	if (totalScore >= 90) {
+	  console.log('A');
+	} else if (totalScore >= 80) {
+	  console.log('B');
+	} else if (totalScore >= 70) {
+	  console.log('C');
+	} else if (totalScore >= 60) {
+	  console.log('D');
+	} else {
+	  console.log('F');
+	}
+}
+
+// 테스트 코드
+printGrade(25, 35);
+printGrade(50, 45);
+printGrade(29, 24);
+printGrade(37, 42);
+
+//............................//
+// else if문 예시
+// 나의 나이와, 나의 성별을 저장하는 변수입니다.
+let myAge = 26;
+let myGender = 'male';
+
+// 호칭을 담은 변수입니다.
+let callOlderBrother = '형';
+let callOlderSister = '누나';
+let callFriend = '친구';
+let callYoungerSister = '여동생';
+let callYoungerBrother = '남동생';
+
+// 상대방의 나이와 성별에 따른 호칭을 리턴하는 함수 whatShouldICall를 완성하세요.
+function whatShouldICallYou(yourAge, yourGender) {
+  // 여기에 코드를 작성해 주세요.
+  if (myAge === yourAge) {
+    return callFriend;
+  } else if (myAge > yourAge) {
+    if (yourGender === 'male') {
+      return callYoungerBrother;
+    } else if (yourGender === 'female') {
+      return callYoungerSister;
+    }
+  } else {
+    if (yourGender === 'male') {
+      return callOlderBrother;
+    } else if (yourGender === 'female'){
+      return callOlderSister;
+    }
+  }
+}
+
+// 테스트 코드
+let result1 = whatShouldICallYou(25, 'female');
+let result2 = whatShouldICallYou(20, 'male');
+let result3 = whatShouldICallYou(26, 'female');
+let result4 = whatShouldICallYou(30, 'male');
+let result5 = whatShouldICallYou(31, 'female');
+
+console.log(result1);
+console.log(result2);
+console.log(result3);
+console.log(result4);
+console.log(result5);
+//............................//
+
+// switch문 vs if문
+let myChoice = 2;
+
+switch(myChoice) {
+  case 1:
+    console.log('토끼를 선택한 당신, ...');
+    break;
+  case 2:
+    console.log('고양이를 선택한 당신, ...');
+    break;
+  case 3:
+    console.log('코알라를 선택한 당신, ...');
+    break;
+  case 4:
+    console.log('강아지를 선택한 당신, ...');
+    break;
+  default:
+    console.log('1에서 4사이의 숫자를 선택해 주세요.'); 
+}
+
+if (myChoice === 1) {
+  console.log('토끼를 선택한 당신, ...');
+} else if (myChoice === 2) {
+  console.log('고양이를 선택한 당신, ...');
+} else if (myChoice === 3) {
+  console.log('코알라를 선택한 당신, ...');
+} else if (myChoice === 4) {
+  console.log('강아지를 선택한 당신, ...');
+} else {
+  console.log('1에서 4사이의 숫자를 선택해 주세요.');
+}
+
+//............................//
+// switch문 예시
+// 각 등급별 가격
+let VIPPrice = 15;
+let RPrice = 13;
+let SPrice = 10;
+let APrice = 8;
+
+// 각 등급에 맞는 가격을 출력하는 함수 checkPrice를 완성하세요.
+function checkPrice(grade) {
+  switch (grade) {
+    case 'VIP':
+      console.log(`${grade}석은 ${VIPPrice}만원 입니다.`);
+      break;
+    case 'R':
+      console.log(`${grade}석은 ${RPrice}만원 입니다.`);
+      break;
+    case 'S':
+      console.log(`${grade}석은 ${SPrice}만원 입니다.`);
+      break;
+    case 'A':
+      console.log(`${grade}석은 ${APrice}만원 입니다.`);
+      break;
+    default:
+      console.log('VIP, R, S, A 중에서 하나를 선택해 주세요.');
+  }
+}
+
+// 테스트 코드
+checkPrice('R');
+checkPrice('VIP');
+checkPrice('S');
+checkPrice('A');
+checkPrice('B');
+//............................//
+
+// for문 (for statement)
+for (초기화부분; 조건부분; 추가동작부분) {
+  동작부분
+}
+
+for (let i = 1; i <= 10; i++) {
+  console.log('안녕!');
+}
+
+let i = 1; 
+for (; i <= 10; i++) {
+  console.log(`${i} 안녕!`);
+}
+
+// for문 연습하기 (짝수 출력하기)
+// 1. i를 1부터 100까지 반복하면서 2로 나눴을 때 나머지가 0일 때만 i를 출력하는 방법
+for (let i = 1; i <= 100; i++) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}
+
+// 2. i를 1부터 50까지 반복하면서 i * 2를 출력하는 방법
+for (let i = 1; i <= 50; i++) {
+  console.log(i * 2);
+}
+
+// 3. i를 2부터 100까지 반복하면서 i를 2씩 증가시키는 방법
+for (let i = 2; i <= 100; i += 2) {
+  console.log(i);
+}
+
+// while문 (while statement)
+while (조건부분) {
+  동작부분
+}
+
+let i = 30; // 글로벌 변수 지정
+
+while (i % 7 !== 0) {
+  i++;
+}
+
+console.log(i);
+
+// i를 1부터 100까지 출력
+let i = 1;
+
+while (i <= 100) {
+  console.log(i);
+  i++;
+}
+
+
+
+
+
+
+
